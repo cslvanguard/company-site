@@ -37,9 +37,9 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight leading-[0.95] mb-8"
           >
-            We build websites{" "}
+            We Power Your Digital Presence{" "}
             <span className="relative inline-block">
-              <span className="gradient-text">that lead</span>
+              <span className="gradient-text">You Focus on What Matters</span>
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
@@ -88,7 +88,7 @@ export default function Hero() {
             className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-3xl mx-auto"
           >
             {[
-              { value: "5+", label: "Projects Delivered" },
+              { value: "5", label: "Projects Delivered" },
               { value: "100%", label: "Client Satisfaction" },
               { value: "24/7", label: "Support Available" },
               { value: "4+yrs", label: "Industry Experience" },

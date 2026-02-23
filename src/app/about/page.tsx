@@ -4,14 +4,7 @@ import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTA from "@/components/CTA";
 
-import {
-  Heart,
-  Target,
-  Lightbulb,
-  Users,
-  Rocket,
-
-} from "lucide-react";
+import { Heart, Target, Lightbulb, Users, Rocket } from "lucide-react";
 
 const values = [
   {
@@ -79,8 +72,7 @@ export default function AboutPage() {
           <AnimatedSection className="max-w-3xl">
             <span className="section-badge mb-6 inline-flex">Our Story</span>
             <h1 className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-8">
-              Two brothers,{" "}
-              <span className="gradient-text">one mission</span>
+              Two brothers, <span className="gradient-text">one mission</span>
             </h1>
             <p className="text-xl text-midnight-900/50 leading-relaxed">
               CSL Vanguard was born from a simple belief: every business
@@ -170,16 +162,18 @@ export default function AboutPage() {
               {
                 name: "Founder One",
                 role: "Co-Founder & Lead Developer",
-                initial: "C",
+                initial: "S",
                 bio: "A full-stack developer with a passion for building scalable, elegant solutions. Obsessed with performance, clean code, and creating experiences that feel effortless. Leads the technical vision and architecture of every project.",
                 skills: ["Full-Stack Dev", "Architecture", "DevOps"],
+                website: "https://sajanaw.com",
               },
               {
                 name: "Founder Two",
                 role: "Co-Founder & Creative Director",
-                initial: "S",
+                initial: "L",
                 bio: "A designer-developer hybrid who bridges the gap between beautiful design and flawless execution. Drives the creative direction, client relationships, and ensures every project tells a compelling story.",
                 skills: ["UI/UX Design", "Strategy", "Marketing"],
+                website: "https://lijithw.com",
               },
             ].map((founder, index) => (
               <AnimatedSection key={founder.name} delay={index * 0.15}>
@@ -210,7 +204,7 @@ export default function AboutPage() {
                   <p className="text-midnight-900/50 text-sm leading-relaxed mb-6">
                     {founder.bio}
                   </p>
-                  <div className="flex flex-wrap gap-2 justify-center">
+                  <div className="flex flex-wrap gap-2 justify-center mb-4">
                     {founder.skills.map((skill) => (
                       <span
                         key={skill}
@@ -220,6 +214,14 @@ export default function AboutPage() {
                       </span>
                     ))}
                   </div>
+                  <a
+                    href={founder.website}
+                    className={
+                      "text-brand-500 hover:text-brand-900 hover:underline"
+                    }
+                  >
+                    {founder.website}
+                  </a>
                 </motion.div>
               </AnimatedSection>
             ))}
@@ -228,7 +230,9 @@ export default function AboutPage() {
           <AnimatedSection className="mt-8 text-center" delay={0.3}>
             <p className="text-sm text-midnight-900/40 italic">
               Replace the placeholder initials with actual founder photos by
-              adding images to <code className="font-mono text-brand-500">/public/images/</code> and updating the component.
+              adding images to{" "}
+              <code className="font-mono text-brand-500">/public/images/</code>{" "}
+              and updating the component.
             </p>
           </AnimatedSection>
         </div>

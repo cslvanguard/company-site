@@ -20,15 +20,15 @@ const contactMethods = [
     icon: Mail,
     title: "Email Us",
     value: "hello@cslvanguard.com",
-    link: "mailto:hello@cslvanguard.com",
+    link: "mailto:customersupport@cslvanguard.com",
     description: "We respond within 24 hours",
   },
   {
     icon: Phone,
     title: "Call Us",
-    value: "+1 (234) 567-890",
-    link: "tel:+1234567890",
-    description: "Mon–Fri, 9am–6pm EST",
+    value: "+1 (401) 592-7299",
+    link: "tel:+4015927299",
+    description: "Mon–Fri, 9am–4pm EST",
   },
   {
     icon: MapPin,
@@ -69,7 +69,7 @@ export default function ContactPage() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -225,7 +225,8 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <label className="block text-sm font-display font-medium mb-2">
-                          Service Needed <span className="text-brand-500">*</span>
+                          Service Needed{" "}
+                          <span className="text-brand-500">*</span>
                         </label>
                         <select
                           name="service"
@@ -278,7 +279,10 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <button type="submit" className="btn-primary w-full justify-center text-base">
+                    <button
+                      type="submit"
+                      className="btn-primary w-full justify-center text-base"
+                    >
                       <span className="relative z-10 flex items-center gap-2">
                         Send Message
                         <Send className="w-4 h-4" />
@@ -310,8 +314,9 @@ export default function ContactPage() {
                       Free Consultation
                     </h3>
                     <p className="text-sm text-midnight-900/50 leading-relaxed">
-                      Every project starts with a free discovery call. We&apos;ll
-                      discuss your needs and provide an honest assessment.
+                      Every project starts with a free discovery call.
+                      We&apos;ll discuss your needs and provide an honest
+                      assessment.
                     </p>
                   </div>
 
@@ -321,8 +326,8 @@ export default function ContactPage() {
                       Work With Us Globally
                     </h3>
                     <p className="text-sm text-midnight-900/50 leading-relaxed">
-                      We&apos;re remote-first and have worked with clients across
-                      multiple continents and time zones.
+                      We&apos;re remote-first and have worked with clients
+                      across multiple continents and time zones.
                     </p>
                   </div>
 
@@ -331,8 +336,9 @@ export default function ContactPage() {
                       Not sure what you need?
                     </h3>
                     <p className="text-sm text-midnight-900/50 leading-relaxed mb-4">
-                      That&apos;s perfectly fine. Just tell us about your business
-                      and goals, and we&apos;ll recommend the best path forward.
+                      That&apos;s perfectly fine. Just tell us about your
+                      business and goals, and we&apos;ll recommend the best path
+                      forward.
                     </p>
                     <a
                       href="mailto:hello@cslvanguard.com"
