@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import {
@@ -19,7 +19,7 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email Us",
-    value: "hello@cslvanguard.com",
+    value: "customersupport@cslvanguard.com",
     link: "mailto:customersupport@cslvanguard.com",
     description: "We respond within 24 hours",
   },
@@ -27,7 +27,7 @@ const contactMethods = [
     icon: Phone,
     title: "Call Us",
     value: "+1 (401) 592-7299",
-    link: "tel:+4015927299",
+    link: "tel:+14015927299",
     description: "Mon–Fri, 9am–4pm EST",
   },
   {
@@ -60,10 +60,24 @@ export default function ContactPage() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, this would send to an API
-    setIsSubmitted(true);
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setIsSubmitted(true);
+    } else {
+      const errorData = await response.json().catch(() => ({}));
+      console.error("Form submission failed:", errorData);
+      alert(
+        `Something went wrong: ${errorData.details || errorData.error || "Please try again later."}`,
+      );
+    }
   };
 
   const handleChange = (
@@ -341,7 +355,7 @@ export default function ContactPage() {
                       forward.
                     </p>
                     <a
-                      href="mailto:hello@cslvanguard.com"
+                      href="mailto:customersupport@cslvanguard.com"
                       className="inline-flex items-center gap-1.5 text-sm font-display font-semibold text-brand-600"
                     >
                       Email us directly

@@ -58,18 +58,18 @@ export default function Footer() {
               </p>
               <div className="flex flex-col gap-3 text-sm">
                 <a
-                  href="mailto:hello@cslvanguard.com"
+                  href="mailto:customersupport@cslvanguard.com"
                   className="flex items-center gap-3 text-white/50 hover:text-brand-400 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  hello@cslvanguard.com
+                  customersupport@cslvanguard.com
                 </a>
                 <a
                   href="tel:+1234567890"
                   className="flex items-center gap-3 text-white/50 hover:text-brand-400 transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  +1 (234) 567-890
+                  +1 (401) 592-7299
                 </a>
                 <div className="flex items-center gap-3 text-white/50">
                   <MapPin className="w-4 h-4" />
