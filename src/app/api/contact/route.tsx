@@ -1,5 +1,3 @@
-export const runtime = "edge";
-
 export async function POST(req: Request) {
   try {
     const { name, email, company, service, budget, message } = await req.json();
@@ -16,35 +14,12 @@ export async function POST(req: Request) {
         ${message}
     `.trim();
 
-    console.log("Email body:", body);
+    console.log("Form submission received:", body);
 
-    const mcResponse = await fetch("https://api.mailchannels.net/tx/v1/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        personalizations: [
-          {
-            to: [{ email: "customersupport@cslvanguard.com" }],
-          },
-        ],
-        from: {
-          email: "no-reply@cslvanguard.com",
-          name: "CSL Vanguard Contact Form",
-        },
-        subject: `New Contact from ${name}`,
-        content: [{ type: "text/plain", value: body }],
-      }),
-    });
-
-    const mcResult = await mcResponse.text();
-    console.log("MailChannels response status:", mcResponse.status);
-    console.log("MailChannels response body:", mcResult);
-
-    if (!mcResponse.ok) {
-      throw new Error(`MailChannels failed: ${mcResponse.status} ${mcResult}`);
-    }
-
-    return new Response(JSON.stringify({ success: true }), {
+    // TODO: Implement email sending logic for Netlify/Generic environment
+    // For now, we'll just log it and return success
+    
+    return new Response(JSON.stringify({ success: true, message: "Submission received (mock)" }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
