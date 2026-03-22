@@ -5,7 +5,6 @@ import AnimatedSection from "@/components/AnimatedSection";
 import CTA from "@/components/CTA";
 
 import { Heart, Target, Lightbulb, Users, Rocket } from "lucide-react";
-import Image from "next/image";
 
 const values = [
   {
@@ -161,19 +160,17 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
             {[
               {
-                name: "Sajana Wijesinghe",
+                name: "Founder One",
                 role: "Co-Founder & Lead Developer",
                 initial: "S",
-                image: "/images/founder-1.JPG",
                 bio: "A full-stack developer with a passion for building scalable, elegant solutions. Obsessed with performance, clean code, and creating experiences that feel effortless. Leads the technical vision and architecture of every project.",
                 skills: ["Full-Stack Dev", "Architecture", "DevOps"],
                 website: "https://sajanaw.com",
               },
               {
-                name: "Lijith Wijesinghe",
+                name: "Founder Two",
                 role: "Co-Founder & Creative Director",
                 initial: "L",
-                image: "/images/founder-2.jpeg",
                 bio: "A designer-developer hybrid who bridges the gap between beautiful design and flawless execution. Drives the creative direction, client relationships, and ensures every project tells a compelling story.",
                 skills: ["UI/UX Design", "Strategy", "Marketing"],
                 website: "https://lijithw.com",
@@ -188,17 +185,11 @@ export default function AboutPage() {
                   <div className="relative w-36 h-36 mx-auto mb-6">
                     <div className="absolute inset-0 rounded-full bg-linear-to-br from-brand-300 to-brand-600 animate-pulse-slow" />
                     <div className="absolute inset-1 rounded-full bg-white flex items-center justify-center">
-                      {/*<div className="w-[calc(100%-8px)] h-[calc(100%-8px)] rounded-full bg-linear-to-br from-brand-100 to-brand-200 flex items-center justify-center">*/}
-                      {/*  /!*<span className="font-display font-bold text-4xl text-brand-600">*!/*/}
-                      {/*  /!*  {founder.initial}*!/*/}
-                      {/*  /!*</span>*!/*/}
-                      {/*</div>*/}
-                      <Image
-                        src={founder.image}
-                        alt={founder.name}
-                        fill
-                        className={"object-cover object-center rounded-full"}
-                      />
+                      <div className="w-[calc(100%-8px)] h-[calc(100%-8px)] rounded-full bg-linear-to-br from-brand-100 to-brand-200 flex items-center justify-center">
+                        <span className="font-display font-bold text-4xl text-brand-600">
+                          {founder.initial}
+                        </span>
+                      </div>
                     </div>
                     {/* Replace the div above with an actual image: */}
                     {/* <Image src="/images/founder-1.jpg" alt={founder.name} fill className="object-cover rounded-full" /> */}
@@ -225,9 +216,9 @@ export default function AboutPage() {
                   </div>
                   <a
                     href={founder.website}
-                    className={"text-brand-500 hover:text-brand-900 underline"}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    className={
+                      "text-brand-500 hover:text-brand-900 hover:underline"
+                    }
                   >
                     {founder.website}
                   </a>
