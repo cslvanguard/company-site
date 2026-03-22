@@ -32,7 +32,7 @@ export default function Footer() {
     <footer className="relative bg-midnight-900 text-white overflow-hidden">
       {/* Gradient mesh */}
       <div className="absolute inset-0 bg-gradient-mesh-dark opacity-50" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-500/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-brand-500/30 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-10">
         {/* Top Section */}
@@ -42,7 +42,7 @@ export default function Footer() {
             <div className="lg:col-span-4">
               <Link href="/" className="flex items-center gap-3 mb-6">
                 <div className="relative w-10 h-10">
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center">
+                  <div className="absolute inset-0 rounded-xl bg-linear-to-br from-brand-400 to-brand-600 flex items-center justify-center">
                     <span className="text-white font-display font-bold text-lg">
                       C
                     </span>
