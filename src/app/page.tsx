@@ -3,7 +3,6 @@ import Services from "@/components/Services";
 import Features from "@/components/Features";
 import Process from "@/components/Process";
 import TechStack from "@/components/TechStack";
-import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
       <Services />
       <Features />
       <Process />
-      {/* <Testimonials /> */}    
+      {/*<Testimonials />*/}
       <CTA />
     </>
   );

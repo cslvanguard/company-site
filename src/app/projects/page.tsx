@@ -4,16 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTA from "@/components/CTA";
-import {
-  ArrowUpRight,
-  Globe,
-  Wrench,
-  Shield,
-  Megaphone,
-  Puzzle,
-  Server,
-  Eye,
-} from "lucide-react";
+import { ArrowUpRight, Globe, Wrench, Shield, Eye } from "lucide-react";
 
 const categories = [
   "All",
@@ -23,88 +14,147 @@ const categories = [
   "Security",
   "Marketing",
   "Hosting",
+  "IT & Support",
 ];
+
+// const projects = [
+//   {
+//     title: "TechBridge Solutions",
+//     category: ["Custom Websites"],
+//     description:
+//       "A complete SaaS platform with dashboard, billing, and user management. Built from scratch with Next.js and a modern design system.",
+//     tags: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
+//     color: "from-violet-400 to-indigo-500",
+//     icon: Globe,
+//     stats: { metric: "+40%", label: "Conversion Rate" },
+//   },
+//   {
+//     title: "GreenLeaf E-Commerce",
+//     category: ["Custom Websites"],
+//     description:
+//       "A full-featured online marketplace for organic products with real-time inventory, payment processing, and admin dashboard.",
+//     tags: ["React", "Node.js", "MongoDB", "Stripe"],
+//     color: "from-emerald-400 to-teal-500",
+//     icon: Globe,
+//     stats: { metric: "2.1s", label: "Avg. Load Time" },
+//   },
+//   {
+//     title: "NovaCorp Rebrand",
+//     category: ["Fix & Improve"],
+//     description:
+//       "Complete redesign and performance overhaul of a legacy corporate site. Reduced load time by 70% and modernized the entire codebase.",
+//     tags: ["Performance", "Redesign", "SEO", "A11y"],
+//     color: "from-blue-400 to-cyan-500",
+//     icon: Wrench,
+//     stats: { metric: "-70%", label: "Load Time" },
+//   },
+//   {
+//     title: "FinServ Security Audit",
+//     category: ["Security"],
+//     description:
+//       "Comprehensive security audit for a financial services platform. Identified and patched 23 vulnerabilities, implemented WAF and 2FA.",
+//     tags: ["Penetration Testing", "WAF", "2FA", "OWASP"],
+//     color: "from-red-400 to-rose-500",
+//     icon: Shield,
+//     stats: { metric: "23", label: "Vulns Patched" },
+//   },
+//   {
+//     title: "Artisan UI Kit",
+//     category: ["Components"],
+//     description:
+//       "A custom design system with 40+ accessible, themeable components. Built for a design agency to use across all client projects.",
+//     tags: ["React", "Storybook", "A11y", "Figma"],
+//     color: "from-purple-400 to-fuchsia-500",
+//     icon: Puzzle,
+//     stats: { metric: "40+", label: "Components" },
+//   },
+//   {
+//     title: "Bloom Digital Campaign",
+//     category: ["Marketing"],
+//     description:
+//       "Full-stack digital marketing campaign including SEO overhaul, PPC management, and social media strategy for a beauty brand.",
+//     tags: ["SEO", "Google Ads", "Social Media", "Analytics"],
+//     color: "from-amber-400 to-orange-500",
+//     icon: Megaphone,
+//     stats: { metric: "3x", label: "Traffic Growth" },
+//   },
+//   {
+//     title: "DataVault Hosting Migration",
+//     category: ["Hosting"],
+//     description:
+//       "Migrated a high-traffic platform from shared hosting to a scalable cloud infrastructure. Zero downtime, 99.99% uptime since.",
+//     tags: ["AWS", "Docker", "CI/CD", "Monitoring"],
+//     color: "from-pink-400 to-rose-500",
+//     icon: Server,
+//     stats: { metric: "99.99%", label: "Uptime" },
+//   },
+//   {
+//     title: "MedConnect Portal",
+//     category: ["Custom Websites"],
+//     description:
+//       "A HIPAA-compliant patient portal with appointment scheduling, secure messaging, and telehealth integration.",
+//     tags: ["Next.js", "HIPAA", "WebRTC", "PostgreSQL"],
+//     color: "from-sky-400 to-blue-500",
+//     icon: Globe,
+//     stats: { metric: "15k+", label: "Active Users" },
+//   },
+// ];
 
 const projects = [
   {
-    title: "TechBridge Solutions",
-    category: "Custom Websites",
+    title: "Sajana W Portfolio",
+    category: ["Custom Websites", "Hosting"],
     description:
-      "A complete SaaS platform with dashboard, billing, and user management. Built from scratch with Next.js and a modern design system.",
-    tags: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
+      "A fully custom personal portfolio built to showcase engineering work, projects, and writing. Designed with a clean UI, fast performance, and a modern tech stack.",
+    tags: ["Next.js", "React", "Tailwind", "Vercel"],
     color: "from-violet-400 to-indigo-500",
     icon: Globe,
-    stats: { metric: "+40%", label: "Conversion Rate" },
+    stats: { metric: "100%", label: "Custom Built" },
+    link: "https://sajanaw.com/",
   },
   {
-    title: "GreenLeaf E-Commerce",
-    category: "Custom Websites",
+    title: "Lijith W Portfolio",
+    category: ["Custom Websites", "Hosting"],
     description:
-      "A full-featured online marketplace for organic products with real-time inventory, payment processing, and admin dashboard.",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+      "A personalized portfolio website built for the co‑founder, focused on simplicity, clarity, and professional presentation. Includes responsive design and optimized performance.",
+    tags: ["Next.js", "React", "Tailwind", "Vercel"],
     color: "from-emerald-400 to-teal-500",
     icon: Globe,
-    stats: { metric: "2.1s", label: "Avg. Load Time" },
+    stats: { metric: "100%", label: "Custom Built" },
+    link: "https://lijithw.com/",
   },
   {
-    title: "NovaCorp Rebrand",
-    category: "Fix & Improve",
+    title: "Mead Memorial Chapel",
+    category: ["Custom Websites", "Hosting"],
     description:
-      "Complete redesign and performance overhaul of a legacy corporate site. Reduced load time by 70% and modernized the entire codebase.",
-    tags: ["Performance", "Redesign", "SEO", "A11y"],
+      "A public‑facing platform providing unbiased updates on the ongoing legal dispute between the colleges and the chapel. Includes a blog, petition signup, document archive, and historical background.",
+    tags: ["Next.js", "CMS", "SEO", "Accessibility"],
     color: "from-blue-400 to-cyan-500",
-    icon: Wrench,
-    stats: { metric: "-70%", label: "Load Time" },
-  },
-  {
-    title: "FinServ Security Audit",
-    category: "Security",
-    description:
-      "Comprehensive security audit for a financial services platform. Identified and patched 23 vulnerabilities, implemented WAF and 2FA.",
-    tags: ["Penetration Testing", "WAF", "2FA", "OWASP"],
-    color: "from-red-400 to-rose-500",
-    icon: Shield,
-    stats: { metric: "23", label: "Vulns Patched" },
-  },
-  {
-    title: "Artisan UI Kit",
-    category: "Components",
-    description:
-      "A custom design system with 40+ accessible, themeable components. Built for a design agency to use across all client projects.",
-    tags: ["React", "Storybook", "A11y", "Figma"],
-    color: "from-purple-400 to-fuchsia-500",
-    icon: Puzzle,
-    stats: { metric: "40+", label: "Components" },
-  },
-  {
-    title: "Bloom Digital Campaign",
-    category: "Marketing",
-    description:
-      "Full-stack digital marketing campaign including SEO overhaul, PPC management, and social media strategy for a beauty brand.",
-    tags: ["SEO", "Google Ads", "Social Media", "Analytics"],
-    color: "from-amber-400 to-orange-500",
-    icon: Megaphone,
-    stats: { metric: "3x", label: "Traffic Growth" },
-  },
-  {
-    title: "DataVault Hosting Migration",
-    category: "Hosting",
-    description:
-      "Migrated a high-traffic platform from shared hosting to a scalable cloud infrastructure. Zero downtime, 99.99% uptime since.",
-    tags: ["AWS", "Docker", "CI/CD", "Monitoring"],
-    color: "from-pink-400 to-rose-500",
-    icon: Server,
-    stats: { metric: "99.99%", label: "Uptime" },
-  },
-  {
-    title: "MedConnect Portal",
-    category: "Custom Websites",
-    description:
-      "A HIPAA-compliant patient portal with appointment scheduling, secure messaging, and telehealth integration.",
-    tags: ["Next.js", "HIPAA", "WebRTC", "PostgreSQL"],
-    color: "from-sky-400 to-blue-500",
     icon: Globe,
-    stats: { metric: "15k+", label: "Active Users" },
+    stats: { metric: "1k+", label: "Monthly Visitors" },
+    link: "https://meadmemorialchapel.net/",
+  },
+  {
+    title: "Hyannis Rotary Redesign",
+    category: ["Fix & Improve"],
+    description:
+      "Complete redesign and modernization of the Rotary Club’s website. Improved UI, optimized workflows, enhanced security, and supported marketing and outreach initiatives.",
+    tags: ["Redesign", "Security", "UX", "Policy Writing"],
+    color: "from-red-400 to-rose-500",
+    icon: Wrench,
+    stats: { metric: "70%", label: "Efficiency Boost" },
+    link: "https://hyannisrotary.org/",
+  },
+  {
+    title: "Centerville Historical Museum",
+    category: ["IT & Support"],
+    description:
+      "Provided cost‑efficient IT solutions for a local nonprofit, including hardware restoration, printer/scanner reconfiguration, and resolving a payment plugin failure to restore online transactions.",
+    tags: ["IT Support", "Troubleshooting", "Legacy Systems", "Payments"],
+    color: "from-purple-400 to-fuchsia-500",
+    icon: Shield,
+    stats: { metric: "100%", label: "Systems Restored" },
+    link: "https://www.centervillehistoricalmuseum.org/",
   },
 ];
 
@@ -114,7 +164,7 @@ export default function ProjectsPage() {
   const filteredProjects =
     activeCategory === "All"
       ? projects
-      : projects.filter((p) => p.category === activeCategory);
+      : projects.filter((p) => p.category.includes(activeCategory));
 
   return (
     <>
@@ -127,12 +177,12 @@ export default function ProjectsPage() {
           <AnimatedSection className="max-w-3xl">
             <span className="section-badge mb-6 inline-flex">Our Work</span>
             <h1 className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-8">
-              Projects that{" "}
-              <span className="gradient-text">speak volumes</span>
+              Projects that <span className="gradient-text">speak volumes</span>
             </h1>
             <p className="text-xl text-midnight-900/50 leading-relaxed">
               Every project is a story of collaboration, innovation, and
-              measurable results. Here&apos;s a glimpse of what we&apos;ve built.
+              measurable results. Here&apos;s a glimpse of what we&apos;ve
+              built.
             </p>
           </AnimatedSection>
         </div>
@@ -194,16 +244,22 @@ export default function ProjectsPage() {
                       </div>
 
                       {/* Hover overlay */}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                        <Eye className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </div>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                          <Eye className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
+                      </a>
                     </div>
 
                     {/* Content */}
                     <div className="p-8">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="text-xs font-display font-semibold text-brand-500 uppercase tracking-wider">
-                          {project.category}
+                          {project.category.join(" & ")}
                         </span>
                       </div>
                       <h3 className="font-display font-bold text-xl mb-3">
@@ -222,8 +278,14 @@ export default function ProjectsPage() {
                           </span>
                         ))}
                       </div>
-                      <button className="inline-flex items-center gap-1.5 text-sm font-display font-semibold text-brand-600 group-hover:gap-3 transition-all duration-300">
-                        View Project
+                      <button className="inline-flex items-center gap-1.5 text-sm font-display font-semibold text-brand-600 group-hover:gap-3 hover:cursor-pointer transition-all duration-300">
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View Project
+                        </a>
                         <ArrowUpRight className="w-4 h-4" />
                       </button>
                     </div>
