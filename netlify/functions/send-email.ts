@@ -41,13 +41,13 @@ const handler: Handler = async (event) => {
           <tr>
             <td style="width: 50%; padding: 4px 8px 4px 0;">
               <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
-                <p style="margin: 0 0 4px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">Name</p>
+                <p style="margin: 0 0 4px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Name</p>
                 <p style="margin: 0; font-size: 14px; color: #0f172a; font-weight: 600;">${name}</p>
               </div>
             </td>
             <td style="width: 50%; padding: 4px 0 4px 8px;">
               <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
-                <p style="margin: 0 0 4px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">Email</p>
+                <p style="margin: 0 0 4px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Email</p>
                 <p style="margin: 0; font-size: 14px; color: #0f172a; font-weight: 600;">${email}</p>
               </div>
             </td>
@@ -55,13 +55,13 @@ const handler: Handler = async (event) => {
           <tr>
             <td style="width: 50%; padding: 4px 8px 4px 0;">
               <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
-                <p style="margin: 0 0 4px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">Company</p>
+                <p style="margin: 0 0 4px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Company</p>
                 <p style="margin: 0; font-size: 14px; color: #0f172a; font-weight: 600;">${company || "N/A"}</p>
               </div>
             </td>
             <td style="width: 50%; padding: 4px 0 4px 8px;">
               <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
-                <p style="margin: 0 0 4px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">Service</p>
+                <p style="margin: 0 0 4px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Service</p>
                 <p style="margin: 0; font-size: 14px; color: #0f172a; font-weight: 600;">${service}</p>
               </div>
             </td>
@@ -69,7 +69,7 @@ const handler: Handler = async (event) => {
           <tr>
             <td colspan="2" style="padding: 4px 0;">
               <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px;">
-                <p style="margin: 0 0 4px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">Budget</p>
+                <p style="margin: 0 0 4px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Budget</p>
                 <p style="margin: 0; font-size: 14px; color: #0f172a; font-weight: 600;">${budget || "N/A"}</p>
               </div>
             </td>
@@ -78,7 +78,7 @@ const handler: Handler = async (event) => {
 
         <!-- Message -->
         <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #6366f1; border-radius: 8px; padding: 20px; margin-top: 8px;">
-          <p style="margin: 0 0 8px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">Message</p>
+          <p style="margin: 0 0 8px; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Message</p>
           <p style="margin: 0; font-size: 14px; color: #334155; line-height: 1.6; white-space: pre-wrap;">${message}</p>
         </div>
 
