@@ -63,20 +63,25 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch("/.netlify/functions/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    if (response.ok) {
-      setIsSubmitted(true);
-    } else {
-      const errorData = await response.json().catch(() => ({}));
-      console.error("Form submission failed:", errorData);
-      alert(
-        `Something went wrong: ${errorData.details || errorData.error || "Please try again later."}`,
-      );
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Form submission failed:", errorData);
+        alert(
+          `Something went wrong: ${errorData.details || errorData.error || "Please try again later."}`,
+        );
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("An unexpected error occurred. Please try again later.");
     }
   };
 
